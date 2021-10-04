@@ -1,0 +1,35 @@
+<%-include('./partials/header')%>
+<%-include('./partials/navblog')%>
+<div class="container d-flex flex-column justify-content-center align-items-center " style="height:100%">
+    <div class="row ">
+
+        <div class="col-lg-12 d-flex flex-column justify-content-center align-items-center text-primary"
+            style="background: url('https://mk0bannerflowss888vj.kinstacdn.com/app/uploads/blog-header-creative-banner.jpg');height:300px;width: 1200px;background-size: cover;">
+            <h1>BLOG</h1>
+
+            <p class="fs-2 ">Ten blog należy do: <%=names%></p>
+        </div>
+    </div>
+
+    <div class="row d-flex justify-content-center " style="width: 100vw;">
+    <% myposts.forEach(ps=>{%>
+    
+        <div class="col-md-4 text-<%=ps.textColor%> d-flex   flex-column justify-content-start align-items-center my-2 me-1 p-1 overflow-auto"
+            style="background-image: url('<%=ps.photo%>');height:400px;width:397px;background-size: cover;background-position: center;">
+            <div class="d-flex justify-content-between w-100" >
+            <a href="/delete/<%=ps._id%>" class="btn btn-outline-danger ">Delete</a>
+            <a href="/edit/<%=ps._id%>" class="btn btn-outline-success  ">Edit</a>
+        </div>
+            <h1><%=ps.title%></h1>
+            <div>
+                <figcaption><%=ps.desc%></figcaption>
+            </div>
+        </div>
+    
+    <%})%>
+</div>
+
+
+
+    <%-include('./partials/footer')%>
+</div>

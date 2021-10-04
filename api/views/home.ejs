@@ -1,0 +1,37 @@
+<%-include('./partials/header')%>
+<%-include('./partials/navbar')%>
+<div class="container my-2">
+    <div class="row ">
+        <div class="col-md-6">
+            <h1 class="text-primary">eyebook</h1>
+            <h4>Eyebook pomaga kontaktować się z innymi osobami oraz udostępniać im różne informacje i materiały.</h4>
+
+        </div>
+        <div class="col-md-6 shadow p-3">
+            <h3>Sign In:</h3>
+            <form class="row g-3" action="/login" method="POST">
+                <div class="col-md-12">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" name="username" required>
+                </div>
+                <div class="col-md-12">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" name="email" required>
+                </div>
+                <div class="col-md-12">
+                    <label for="password" class="form-label">password</label>
+                    <input type="password" class="form-control" name="password" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary my-4 py-2 ">Sign in</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<%-include('./partials/footer')%>
