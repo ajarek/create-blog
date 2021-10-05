@@ -3,8 +3,8 @@ const User = require('../models/User')
 const bcrypt = require('bcrypt')
 
 //LOGIN
-router.get('/',(req,res)=>{
-    res.render('home')
+router.get('/login',(req,res)=>{
+    res.render('login')
 })
 .post('/login',async(req,res)=>{
     try{

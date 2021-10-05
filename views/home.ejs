@@ -1,0 +1,38 @@
+<%-include('./partials/header')%>
+<%-include('./partials/navhome')%>
+<div class="container d-flex flex-column justify-content-center align-items-center " style="height:100%;width: 100vw;">
+    <div class="row ">
+
+        <div class="row ">
+
+            <div class=" d-flex flex-column justify-content-center align-items-center text-primary"
+                style="background: url('https://mk0bannerflowss888vj.kinstacdn.com/app/uploads/blog-header-creative-banner.jpg');height:300px;background-size: cover;">
+                <h1 class="fw-bold ">Witaj! Tu <span>eyebook</span>🤩</h1>
+
+                <p class="fs-3 text-center "> Pomagam kontaktować się z innymi osobami oraz udostępniać im różne
+                    informacje i materiały.</p>
+            </div>
+        </div>
+
+
+        <div class="row d-flex justify-content-center " style="width: 100vw;">
+            <% myhome.forEach(hm=>{%>
+
+            <div class="col-md-4 text-<%=hm.textColor%> d-flex   flex-column justify-content-start align-items-center my-2 me-1 p-1 overflow-auto"
+                style="background-image: url('<%=hm.photo%>');height:400px;width:397px;background-size: cover;background-position: center;">
+                <div class="d-flex justify-content-evenly w-100">
+                    <p>autor: <%=hm.username%></p>
+                    <p>data: <%=hm.createdAt.toLocaleDateString()%></p>
+                </div>
+                <h1><%=hm.title%></h1>
+                <div>
+                    <figcaption><%=hm.desc%></figcaption>
+                </div>
+            </div>
+
+            <%})%>
+        </div>
+
+
+    </div>
+    <%-include('./partials/footer')%>
