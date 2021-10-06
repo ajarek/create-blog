@@ -18,10 +18,10 @@
         <div class="row d-flex justify-content-center " style="width: 100vw;">
             <% myhome.forEach(hm=>{%>
 
-            <div class="col-md-4 text-<%=hm.textColor%> d-flex   flex-column justify-content-start align-items-center my-2 me-1 p-1 overflow-auto"
+            <div class="col-md-4 text-<%=hm.textColor%> d-flex   flex-column justify-content-start align-items-center my-2 me-1 p-1 overflow-auto  myDiv "
                 style="background-image: url('<%=hm.photo%>');height:400px;width:397px;background-size: cover;background-position: center;">
                 <div class="d-flex justify-content-evenly w-100">
-                    <p>autor: <%=hm.username%></p>
+                    <p class="author"><%=hm.username%></p>
                     <p>data: <%=hm.createdAt.toLocaleDateString()%></p>
                 </div>
                 <h1><%=hm.title%></h1>
@@ -35,4 +35,31 @@
 
 
     </div>
+
+    <script>
+        function myFunction() {
+
+            const input = document.querySelector("#search");
+            let filter = input.value.toUpperCase();
+             let mydiv=document.querySelectorAll('.myDiv')
+            let names = document.querySelectorAll(".author");
+            const btn=document.querySelector('#search')
+            names.forEach((name,index) => {
+
+                
+                
+                if (name) {
+                    
+                 const txtValue = name.innerHTML;
+                 
+                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                   mydiv[index].classList.add("d-block");
+                  } else {
+                   mydiv[index].classList.add("d-none");
+                  }
+                }
+
+            })
+        }
+    </script>
     <%-include('./partials/footer')%>
